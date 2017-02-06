@@ -99,10 +99,11 @@ Exemple de génération d'entity :
 
 
 Générer la table :
+Afficher la requête qui va être exécuter.
 
     C:\Users\prepavenir\PhpstormProjects\Formation_Git_2017_01\AddressBookSymfony>php bin/console doctrine:schema:update --dump-sql
     CREATE TABLE contact (id INT AUTO_INCREMENT NOT NULL, prenom VARCHAR(40) NOT NULL, nom VARCHAR(40) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB;
-Afficher la requête qui va être exécuter.
+
 
     C:\Users\prepavenir\PhpstormProjects\Formation_Git_2017_01\AddressBookSymfony>php bin/console doctrine:schema:update --force
     Updating database schema...
@@ -142,3 +143,10 @@ On renvoit la variable $contacts depuis le controller (ici ContactController) ve
     return $this->render('AppBundle:Contact:list.html.twig', array(
                 'contacts' => $contacts
             ));
+            
+
+Générer un formulaire
+---
+(AppBundle:Contact = nom de l'entité, précision obligatoire)
+
+    >php bin/console doctrine:generate:form AppBundle:Contact

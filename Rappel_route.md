@@ -5,11 +5,7 @@ Adresse standard : addressbook.sf3/list
 
 Adresse mode dev : adressbook.sf3/app_dev.php/list
 
-
-Lien vers route :
-
-    <li><a href="{{ path('app_contact_list') }}">Lister</a></li>
-    
+ 
     
 Conflit de routes
 ---
@@ -43,5 +39,14 @@ Ou limiter les valeurs possibles de /{id} via regex (expression régulière)
      */
 Cette expression régulière oblige l'id à commencer par un chiffre de 1 à 9, ce chiffre est suivit par *(0 à n) chiffres, chacun allant de 0 à 9
 
+<br>
+Lien vers route
+On tape le nom du bundle sans Bundle (AppBundle -> app)
+le nom du controller sans controller (SocieteController -> societe)
+le nom de l'action sans action (showAction -> show)
+
+    app_societe_show
+    
+    <li><a href="{{ path('app_contact_list') }}">Lister</a></li>
 
 
