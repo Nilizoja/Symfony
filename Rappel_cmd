@@ -40,6 +40,7 @@ Vider le cache dans l'environnement de prod
 Debug route, affiche toutes les routes, y compris celles de dev (commencent par underscore)
 
     >php bin\console debug:router
+    
 Pour afficher uniquement les routes de prod :
 
     >php bin\console debug:router --env=prod

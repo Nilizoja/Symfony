@@ -1,0 +1,26 @@
+Générer une clé étrangère
+---
+
+http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/association-mapping.html
+
+Pour créer une clé étrangère, on crée l'attribut correspondant dans l'entity, avec en annotation le type de lien (One-to-One, Many-to-One etc...) ainsi que l'entité (table) cible
+
+        /**
+         * @var Societe
+         * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Societe")
+         */
+        protected $societe;
+        
+On peut ensuite vérifier la requête sql puis l'exécuter via l'invité de commande
+
+    C:\Users\prepavenir\PhpstormProjects\Formation_Git_2017_01\AddressBookSymfony>php bin/console doctrine:schema:update --dump-sql
+    ALTER TABLE contact ADD societe_id INT DEFAULT NULL;
+    ALTER TABLE contact ADD CONSTRAINT FK_4C62E638FCF77503 FOREIGN KEY (societe_id) REFERENCES societe (id);
+    CREATE INDEX IDX_4C62E638FCF77503 ON contact (societe_id);
+    
+    C:\Users\prepavenir\PhpstormProjects\Formation_Git_2017_01\AddressBookSymfony>php bin/console doctrine:schema:update --force
+    Updating database schema...
+    Database schema updated successfully! "3" queries were executed
+
+La clé étrangère copiera le contenu de la clé primaire de l'entité (table) cible
+

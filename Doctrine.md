@@ -145,8 +145,3 @@ On renvoit la variable $contacts depuis le controller (ici ContactController) ve
             ));
             
 
-Générer un formulaire
----
-(AppBundle:Contact = nom de l'entité, précision obligatoire)
-
-    >php bin/console doctrine:generate:form AppBundle:Contact

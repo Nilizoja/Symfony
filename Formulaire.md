@@ -4,11 +4,11 @@ Créer un formulaire de A à Z
 Générer un entityType
 
         >php bin/console doctrine:generate:form AppBundle:Societe
-        (generer un SocieteType dans un dossier form du bundle)
+        (generer un SocieteType dans un dossier form du bundle indiqué)
 
-Méthode dans le controller, mis ici dans l'action add
+Méthode dans le controller, mis ici dans l'action add de SocieteController
 
-        public function addAction(Request $request)
+        public function addAction(Request $request) #class Request de httpFoundation
         {
             $form = $this->createForm(SocieteType::class);
     
@@ -55,3 +55,11 @@ Le twig contiendra la forme du formulaire
             </div>
         </div>
         {{ form_end(societeForm) }}
+        
+Dans chaque entityType, on peut modifier la méthode buildForm pour déterminer les attribut qui apparaîtront ou pas dans le formulaire.
+
+     public function buildForm(FormBuilderInterface $builder, array $options)
+        {
+            $builder->add('nom')->add('ville')->add('autre_attribut')        ;
+        }
+        
