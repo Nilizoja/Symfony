@@ -49,4 +49,7 @@ le nom de l'action sans action (showAction -> show)
     
     <li><a href="{{ path('app_contact_list') }}">Lister</a></li>
 
+Rediriger vers une route
+Ici on redirige vers la route show, à laquelle on ajoute l'id contenu dans $contact
 
+    return $this->redirectToRoute('app_contact_show', ['id' => $contact->getId()]);
