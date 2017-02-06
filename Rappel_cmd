@@ -1,0 +1,50 @@
+Rappel commandes
+===
+
+Créer un nouveau projet :
+
+        >composer create-project symfony/framework-standard-edition NomDeProjet
+        Creating the "app/config/parameters.yml" file
+        Some parameters are missing. Please provide them.
+        database_host (127.0.0.1): 
+        database_port (null): 
+        database_name (symfony): contacts   
+        database_user (root): 
+        database_password (null): 
+        mailer_transport (smtp): 
+        mailer_host (127.0.0.1): 
+        mailer_user (null): 
+        mailer_password (null): 
+        secret (ThisTokenIsNotSoSecretChangeIt): 04eb46846cba76ae7edbe407ae812120ea1927d8
+La clé secret est utilisée par les composants de sécurité de Symfony. Il faut qu'elle soit différente pour chaque application. 
+On peut utiliser http://nux.net/secret
+
+
+
+
+
+
+Pour récuperer une bibliothèque :
+
+    >composer require bibliotheque
+       
+Démarrage serveur Symfony :
+
+    >php bin\console server:run
+       
+Vider le cache dans l'environnement de prod 
+
+    >php bin\console cache:clear --env=prod
+    
+
+Debug route, affiche toutes les routes, y compris celles de dev (commencent par underscore)
+
+    >php bin\console debug:router
+Pour afficher uniquement les routes de prod :
+
+    >php bin\console debug:router --env=prod
+    
+Vérifier la config serveur
+
+    >php bin/synfony_requirements
+    

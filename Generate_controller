@@ -1,0 +1,80 @@
+Création d'un controller :
+
+        C:\Users\prepavenir\PhpstormProjects\Formation_Git_2017_01\AddressBookSymfony>php bin\console generate:controller
+        
+        
+          Welcome to the Symfony controller generator
+        
+        
+        
+        Every page, and even sections of a page, are rendered by a controller.
+        This command helps you generate them easily.
+        
+        First, you need to give the controller name you want to generate.
+        You must use the shortcut notation like AcmeBlogBundle:Post
+        
+        Controller name: AppBundle:Societe
+        
+        Determine the format to use for the routing.
+        
+        Routing format (php, xml, yml, annotation) [annotation]:
+        
+        Determine the format to use for templating.
+        
+        Template format (twig, php) [twig]:
+        
+        Instead of starting with a blank controller, you can add some actions now. An action
+        is a PHP function or method that executes, for example, when a given route is matched.
+        Actions should be suffixed by Action.
+        
+        
+        New action name (press <return> to stop adding actions): listAction
+        Action route [/list]:
+        Template name (optional) [AppBundle:Societe:list.html.twig]:
+        
+        New action name (press <return> to stop adding actions): addAction
+        Action route [/add]:
+        Template name (optional) [AppBundle:Societe:add.html.twig]:
+        
+        New action name (press <return> to stop adding actions):
+        
+        
+          Summary before generation
+        
+        
+        You are going to generate a "AppBundle:Societe" controller
+        using the "annotation" format for the routing and the "twig" format
+        for templating
+        Do you confirm generation [yes]?
+        
+        
+          Controller generation
+        
+        
+          created .\src\AppBundle/Resources/views/Societe/
+          created .\src\AppBundle/Resources/views/Societe/list.html.twig
+          created .\src\AppBundle/Resources/views/Societe/add.html.twig
+          created .\src\AppBundle/Controller/SocieteController.php
+          created .\src\AppBundle/Tests/Controller/
+          created .\src\AppBundle/Tests/Controller/SocieteControllerTest.php
+        Generating the bundle code: OK
+        
+        
+          Everything is OK! Now get to work :).
+ 
+Creation d'actions :
+===
+ 
+          New action name (press <return> to stop adding actions): listAction
+          Action route [/list]: /contacts
+          Template name (optional) [AppBundle:Contact:list.html.twig]:
+          
+          New action name (press <return> to stop adding actions): showAction
+          Action route [/show]: /contacts/{id}
+          Template name (optional) [AppBundle:Contact:show.html.twig]:
+          
+          New action name (press <return> to stop adding actions): addAction
+          Action route [/add]: /contacts/ajouter
+          Template name (optional) [AppBundle:Contact:add.html.twig]:
+
+/contacts/{id}renverra une variable $id
