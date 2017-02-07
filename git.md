@@ -76,6 +76,10 @@ Cloner un dépôt.
     git clone URL_du_depot
     git clone https://github.com/bioub/Formation_Git_2017_01.git
     
+Après clonage, se mettre dans le repertoire du projet et appeler composer
+
+    composer install
+    
 Synchroniser des dépôts.
 --
 Rappatrier les commit (-u origin master sur la première utilisation seulement)
@@ -99,3 +103,4 @@ Supprimer le repository
 Accéder à la partie setting du repository en cours en modifiant l'url
 
     https://github.com/NicolasHerin/CoursSymfony/settings
+    
