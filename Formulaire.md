@@ -7,6 +7,7 @@ Générer un entityType
         (generer un SocieteType dans un dossier form du bundle indiqué)
 
 Méthode dans le controller, mis ici dans l'action add de SocieteController
+SocieteType::class renvoie la classe à laquelle se rapporte SocieteType (ici AppBundle/.../Societe)
 
         public function addAction(Request $request) #class Request de httpFoundation
         {
@@ -42,7 +43,8 @@ La validation peut être gérée dans l'entity, on l'on précise des conditions 
      */
         private $nom;
 
-Le twig contiendra la forme du formulaire
+Le twig contiendra la forme du formulaire <br>
+form_end génére aussi tous les éléments "oubliés"
 
         {{ form_start(societeForm, {'attr':{'novalidate': 'novalidate'}}) }}
         {{  form_row(societeForm.nom) }}

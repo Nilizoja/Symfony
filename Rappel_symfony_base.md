@@ -9,3 +9,18 @@ En général il hérite de Symfony\Bundle\FrameworkBundle\Controller\Controller.
 ` Voir Generate_controller.md`
  
  
+ Changer langue
+ ---
+ Dans App/config/config.yml, changer locale:en et dé-commenter la seconde ligne
+ 
+    parameters:
+        locale: fr
+        
+        translator:      { fallbacks: ["%locale%"] }
+ 
+ 
+ Vider le cache
+ ---
+ 
+    cache:clear (de base affecte le mode dev)
+    cache:clear --env=prod
