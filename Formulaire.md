@@ -65,3 +65,42 @@ Dans chaque entityType, on peut modifier la méthode buildForm pour déterminer 
             $builder->add('nom')->add('ville')->add('autre_attribut')        ;
         }
         
+        
+        
+Ajouter un champ "choix"
+---
+https://symfony.com/doc/current/reference/forms/types/choice.html
+Passer par un tableau associatif est obligatoire, si l'on passe par un tableau numéroté, les clés apparaîtront en choix (1,2,3 etc...) et pas les valeurs
+
+    ->add('contrat', ChoiceType::class, array(
+                    'choices'  => array(
+                       'CDI' => 'CDI',
+                       'CDD' => 'CDD',
+                       'Stage' => 'Stage',
+                       'Freelance' => 'Freelance')));
+                        
+Transmettre des données sans passer par un champ du formulaire
+---
+On peut créer une fonction avec l'annotation "PrePersist" pour que celle-ci soit exécutée avant le persist() (fonction générant la requête SQL) dans le controller<br>
+Pour que cette annotation fonctionne, il faut ajouter HasLifecycleCallbacks()
+http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/events.html#lifecycle-callbacks
+
+    /**
+     * Offre
+     *
+     * @ORM\Table(name="offre")
+     * @ORM\Entity(repositoryClass="AppBundle\Repository\OffreRepository")
+     * @ORM\HasLifecycleCallbacks()
+     */
+    class Offre
+    {
+        /**
+        * @ORM\PrePersist()
+        */
+        public function fillDate()
+            {
+                if (!$this->id){
+                    $this->date = new \DateTime();
+                }
+            }
+    }
