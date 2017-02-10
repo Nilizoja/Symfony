@@ -49,3 +49,12 @@ Vérifier la config serveur
 
     >php bin/synfony_requirements
     
+Installer les bibliothèques d'après les versions indiquées dans le fichier composer.lock
+
+    >composer install
+
+Installer les bibliothèques d'après les versions indiquées dans le fichier composer.json
+
+    >composer update
+
+
