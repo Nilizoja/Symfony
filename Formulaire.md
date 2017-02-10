@@ -81,8 +81,8 @@ Passer par un tableau associatif est obligatoire, si l'on passe par un tableau n
                         
 Transmettre des données sans passer par un champ du formulaire
 ---
-On peut créer une fonction avec l'annotation "PrePersist" pour que celle-ci soit exécutée avant le persist() (fonction générant la requête SQL) dans le controller<br>
-Pour que cette annotation fonctionne, il faut ajouter HasLifecycleCallbacks()
+On peut créer dans l'entity une fonction avec l'annotation "PrePersist", pour que celle-ci soit exécutée avant le persist() (fonction générant la requête SQL) par le controller<br>
+Pour que cette annotation fonctionne, il faut ajouter HasLifecycleCallbacks() à cette même entity
 http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/events.html#lifecycle-callbacks
 
     /**
