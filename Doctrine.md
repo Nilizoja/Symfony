@@ -1,5 +1,3 @@
-
-
 Docu Doctrine : http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/
 
 Pour voir les commandes doctrine :
