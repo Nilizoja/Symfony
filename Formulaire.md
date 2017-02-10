@@ -104,3 +104,31 @@ http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/event
                 }
             }
     }
+    
+Formulaire de choix affichant le contenu d'une table
+---
+
+Après avoir crée un entityType "categorie", et ajouté à l'entité principale (ici 'offre') un attribut "categories"
+
+    /**
+     *@ORM\ManyToMany(targetEntity="AppBundle\Entity\Categorie")
+     */
+    protected $categories = [];
+    
+On laisse doctrine générer la table intermédiaire.
+Dans le buildForm() de offreType, on peut se contenter d'appeller un add sur cet attribut
+
+    ->add('categories')
+
+Ou détailler un entityType form, pour pouvoir choisir les caractéristiques (affichage select ou checkbox).
+
+    ->add('categories', EntityType::class, array(
+    
+                    'class' => 'AppBundle:Categorie',
+    
+                    'choice_label' => 'nom',
+    
+                    'multiple' => true,
+                    'expanded' => true
+                ))
+                

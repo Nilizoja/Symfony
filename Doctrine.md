@@ -145,3 +145,19 @@ On renvoit la variable $contacts depuis le controller (ici ContactController) ve
             ));
             
 
+Classer les résultats
+---
+
+Pour classer les données récupérées via repository, on utilise findBy() au lieu de find($attribut) ou findAll()
+
+        $repo = $this->getDoctrine()->getRepository('AppBundle:Contact');
+        
+        $contacts = $repo->findBy([], ['prenom' => 'ASC']);
+
+Affiner les recherches
+---
+
+On peut aussi utiliser findBy() pour récupérer les entrées dont un champ à une valeur donnée
+
+    $products = $repository->findByPrice(19.99);
+
